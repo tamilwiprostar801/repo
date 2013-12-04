@@ -1,0 +1,7 @@
+PUPPETMASTER = 'tamilcookbook'
+SSH = 'ssh -t -A'
+task :deploy do
+	sh "git push"
+	sh "#{SSH} #{PUPPETMASTER} ' sudo git pull'"
+end
+ 
